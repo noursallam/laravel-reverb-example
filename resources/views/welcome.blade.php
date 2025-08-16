@@ -17,15 +17,14 @@
     @endif
 </head>
 
-<body>
-    <div id="chat-log" style="padding:2em;font-family:monospace;"></div>
-
-    <div class="flex items-center justify-center min-h-screen bg-gray-100">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold mb-4">Welcome to Laravel</h1>
-            <p class="text-lg">This is a simple welcome page.</p>
+<body class="bg-gray-100">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6 flex flex-col"
+            style="height: 500px;">
+            <h2 class="text-2xl font-bold mb-4 text-center">Chat</h2>
+            <div id="chat-log"
+                class="flex flex-col flex-1 overflow-y-auto mb-4 space-y-2"></div>
         </div>
-
     </div>
 
 </body>
