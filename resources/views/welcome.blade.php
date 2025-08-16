@@ -23,7 +23,15 @@
             style="height: 500px;">
             <h2 class="text-2xl font-bold mb-4 text-center">Chat</h2>
             <div id="chat-log"
-                class="flex flex-col flex-1 overflow-y-auto mb-4 space-y-2"></div>
+                class="flex flex-col flex-1 overflow-y-auto mb-4 space-y-2">
+                @if(isset($messages))
+                    @foreach($messages as $msg)
+                        <div class="max-w-xs bg-blue-500 text-white rounded-lg px-4 py-2 my-2 shadow-md self-end">
+                            <span class='font-semibold'>User:</span> {{ $msg->message }}
+                        </div>
+                    @endforeach
+                @endif
+            </div>
         </div>
     </div>
 

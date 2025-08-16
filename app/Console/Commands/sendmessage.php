@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\Message; // Add this import
 
 class sendmessage extends Command
 {
@@ -26,7 +27,9 @@ class sendmessage extends Command
     {
         // Get the value of the --m option
         $message = $this->option('m');
+        // Store the message in the database
+        Message::create(['message' => $message]);
+        // Broadcast the event
         broadcast(new \App\Events\SendMessage($message));
-        
     }
 }
